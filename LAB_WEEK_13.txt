@@ -1,0 +1,31 @@
+1. - MVVM memisahkan tiga hal utama, yaitu Model, View, dan ViewModel. 
+   - ViewModel tidak bergantung langsung pada UI framework (Activity / Fragment)
+   - MVVM modern (misalnya Android dengan LiveData, StateFlow, Compose) membuat UI otomatis update
+   
+   File yang mewakili Model:
+   - MovieRepository.kt
+   - MovieDatabase.kt
+   - MovieDao.kt
+   - Movie.kt
+   - MovieApiService.kt
+   - MovieWorker.kt
+
+   File yang mewakili View:
+   - MainActivity.kt
+   - MovieListFragment.kt
+   - activity_main.xml
+   - item_movie.xml
+   - MovieAdapter.kt
+
+   File yang mewakili ViewModel:
+   - MovieViewModel.kt
+
+2. Karena UI otomatis update tanpa kode ekstra, mengurangi boilerplate secara signifikan, 
+   performa lebih baik dalam layout besar dan kompleks, menghindari duplikasi logika UI
+
+3. Karena menjamin hanya ada satu instance, memungkinkan instance yang sama diakses dari mana saja, efisien dalam resource-heavy objects
+
+4. Karena memisahkan “data access logic” dari “business logic”, konsistensi format data, mendukung clean architecture
+
+5. Refresh on App Launch, Refresh on App Resume, Using Pull-to-Refresh
+   
